@@ -2,11 +2,11 @@
 
 :root {
     --bg: #020617;
+    --bg2: #0f172a;
     --card: rgba(255,255,255,0.06);
     --border: rgba(255,255,255,0.08);
     --text: #e5e7eb;
     --accent: #ff2c2c;
-    --glass: blur(25px);
 }
 
 /* RESET */
@@ -19,7 +19,7 @@
 /* BODY */
 body {
     font-family: 'Inter', sans-serif;
-    background: radial-gradient(circle at 20% 0%, #0f172a, #020617 60%);
+    background: radial-gradient(circle at top, var(--bg2), var(--bg));
     color: var(--text);
     overflow-x: hidden;
 }
@@ -46,7 +46,7 @@ header {
     position: sticky;
     top: 0;
     z-index: 100;
-    backdrop-filter: var(--glass);
+    backdrop-filter: blur(20px);
     background: rgba(2,6,23,0.6);
     border-bottom: 1px solid var(--border);
     padding: 15px;
@@ -90,26 +90,49 @@ nav a:hover {
     color: white;
 }
 
-/* GRID RESPONSIVO */
+/* HERO */
+.hero {
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: radial-gradient(circle, rgba(255,0,0,0.2), transparent);
+    padding: 20px;
+}
+
+.hero-content h2 {
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.hero-content p {
+    max-width: 600px;
+    margin: auto;
+    opacity: 0.8;
+    margin-bottom: 20px;
+}
+
+/* GRID */
 .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
-    padding: 30px;
+    padding: 40px 30px;
 }
 
-/* CARD FUTURISTA */
+/* CARD */
 .card {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 24px;
     overflow: hidden;
-    backdrop-filter: var(--glass);
+    backdrop-filter: blur(25px);
     transition: all 0.4s ease;
     position: relative;
 }
 
-/* EFECTO DE LUZ */
+/* GLOW */
 .card::before {
     content: "";
     position: absolute;
@@ -126,18 +149,18 @@ nav a:hover {
 /* HOVER */
 .card:hover {
     transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.6);
 }
 
-/* IMAGEN */
+/* IMAGE */
 .card img {
     width: 100%;
     height: 220px;
     object-fit: cover;
-    filter: contrast(1.1) brightness(0.9);
+    filter: brightness(0.9) contrast(1.1);
 }
 
-/* CONTENIDO */
+/* CONTENT */
 .card-content {
     padding: 20px;
 }
@@ -154,11 +177,29 @@ nav a:hover {
     opacity: 0.85;
 }
 
-/* BOTÓN */
+/* FEATURE SECTION */
+.feature {
+    padding: 100px 20px;
+    text-align: center;
+    background: linear-gradient(to right, #020617, #0f172a);
+}
+
+.feature-content h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.feature-content p {
+    max-width: 600px;
+    margin: auto;
+    opacity: 0.8;
+}
+
+/* BUTTON */
 .button {
     display: inline-block;
-    margin-top: 10px;
-    padding: 10px 18px;
+    margin-top: 15px;
+    padding: 12px 22px;
     border-radius: 12px;
     background: linear-gradient(135deg, #ff0000, #ff4d4d);
     color: white;
@@ -185,7 +226,7 @@ html {
     scroll-behavior: smooth;
 }
 
-/* SCROLLBAR PRO */
+/* SCROLLBAR */
 ::-webkit-scrollbar {
     width: 8px;
 }
@@ -197,8 +238,9 @@ html {
 
 /* RESPONSIVE */
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 18px;
+
+    .hero-content h2 {
+        font-size: 26px;
     }
 
     nav a {
@@ -207,6 +249,6 @@ html {
     }
 
     .grid {
-        padding: 15px;
+        padding: 20px;
     }
 }
