@@ -1,14 +1,15 @@
 body {
     margin: 0;
-    font-family: Arial;
-    background: #0b0b0b;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #0b0b0b, #111827);
     color: white;
 }
 
 header {
-    background: #e10600;
+    background: rgba(225, 6, 0, 0.9);
     padding: 15px;
     text-align: center;
+    backdrop-filter: blur(10px);
 }
 
 nav a {
@@ -23,15 +24,23 @@ nav a {
 }
 
 .card {
-    background: #1a1a1a;
-    margin: 15px;
+    background: rgba(255,255,255,0.05);
+    margin: 15px 0;
     padding: 15px;
-    border-radius: 10px;
+    border-radius: 15px;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 0 20px rgba(255,0,0,0.2);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.02);
 }
 
 img {
     width: 100%;
     border-radius: 10px;
+    margin-top: 10px;
 }
 
 footer {
@@ -39,4 +48,8 @@ footer {
     text-align: center;
     padding: 20px;
     margin-top: 40px;
+}
+
+h3 {
+    color: #ff2c2c;
 }
