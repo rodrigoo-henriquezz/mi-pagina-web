@@ -1,8 +1,10 @@
+/* RESET */
 *{
 margin:0;
 padding:0;
 box-sizing:border-box;
 font-family:-apple-system, BlinkMacSystemFont, sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
@@ -11,17 +13,30 @@ color:white;
 overflow-x:hidden;
 }
 
-/* NAV */
+/* NAVBAR */
 .nav{
 position:fixed;
 top:0;
 width:100%;
 display:flex;
 justify-content:space-between;
+align-items:center;
 padding:20px 40px;
-background:rgba(0,0,0,0.6);
-backdrop-filter:blur(12px);
+background:rgba(0,0,0,0.4);
+backdrop-filter:blur(10px);
+transition:0.4s;
 z-index:1000;
+}
+
+.nav-scroll{
+background:rgba(0,0,0,0.85);
+backdrop-filter:blur(20px);
+}
+
+.logo{
+font-weight:bold;
+font-size:18px;
+letter-spacing:1px;
 }
 
 .nav a{
@@ -40,13 +55,14 @@ opacity:1;
 .hero{
 height:100vh;
 position:relative;
+overflow:hidden;
 }
 
 .hero-img{
 width:100%;
 height:100%;
 object-fit:cover;
-filter:brightness(55%);
+filter:brightness(50%);
 }
 
 .hero-content{
@@ -59,15 +75,17 @@ text-align:center;
 
 .hero h1{
 font-size:90px;
-letter-spacing:2px;
+letter-spacing:3px;
+animation:fadeUp 1.5s ease;
 }
 
 .hero p{
 font-size:22px;
 opacity:0.8;
+animation:fadeUp 2s ease;
 }
 
-/* FEATURE */
+/* FEATURE SECTION */
 .feature{
 display:flex;
 align-items:center;
@@ -78,6 +96,7 @@ padding:120px 10%;
 .feature img{
 width:55%;
 border-radius:20px;
+box-shadow:0 20px 40px rgba(0,0,0,0.5);
 }
 
 .feature .text{
@@ -85,36 +104,62 @@ max-width:500px;
 }
 
 .feature h2{
-font-size:40px;
+font-size:42px;
 margin-bottom:20px;
 }
 
-/* GRID */
-.grid-home{
+/* GRID GENERAL */
+.grid, .grid-home{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:30px;
 padding:100px 10%;
 }
 
-.box{
+/* CARDS (PILOTOS + HOME) */
+.card, .box{
 background:rgba(255,255,255,0.05);
 border-radius:20px;
 overflow:hidden;
-transition:0.4s;
 backdrop-filter:blur(12px);
+transition:0.4s;
+transform:translateY(40px);
+opacity:0;
 }
 
-.box img{
+.card.show, .box.show{
+transform:translateY(0);
+opacity:1;
+}
+
+.card img, .box img{
 width:100%;
-height:200px;
+height:220px;
 object-fit:cover;
 }
 
-.box:hover{
-transform:translateY(-10px) scale(1.03);
+.card:hover, .box:hover{
+transform:translateY(-12px) scale(1.04);
+box-shadow:0 25px 50px rgba(0,0,0,0.6);
 }
 
+/* CONTENIDO CARD */
+.card-content{
+padding:20px;
+}
+
+.card h3{
+margin-bottom:10px;
+font-size:20px;
+}
+
+.card p{
+opacity:0.75;
+font-size:14px;
+line-height:1.5;
+}
+
+/* HOME BOX */
 .box h3{
 padding:20px;
 font-size:22px;
@@ -131,9 +176,14 @@ padding:20px;
 color:#ff2e2e;
 text-decoration:none;
 font-weight:bold;
+transition:0.3s;
 }
 
-/* FINAL */
+.box a:hover{
+opacity:0.7;
+}
+
+/* FULL SECTION */
 .full{
 height:90vh;
 position:relative;
@@ -165,6 +215,39 @@ padding:40px;
 opacity:0.6;
 }
 
+/* ANIMACIONES */
+.fade{
+opacity:0;
+transform:translateY(40px);
+transition:1s ease;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+@keyframes fadeUp{
+from{
+opacity:0;
+transform:translateY(40px);
+}
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+/* SCROLL BAR (detalle pro) */
+::-webkit-scrollbar{
+width:8px;
+}
+
+::-webkit-scrollbar-thumb{
+background:#444;
+border-radius:10px;
+}
+
 /* RESPONSIVE */
 @media(max-width:768px){
 
@@ -172,8 +255,13 @@ opacity:0.6;
 font-size:45px;
 }
 
+.hero p{
+font-size:16px;
+}
+
 .feature{
 flex-direction:column;
+padding:80px 5%;
 }
 
 .feature img{
@@ -182,6 +270,10 @@ width:100%;
 
 .overlay h2{
 font-size:35px;
+}
+
+.grid, .grid-home{
+padding:80px 5%;
 }
 
 }
