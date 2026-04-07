@@ -30,39 +30,39 @@
 </section>
 
 <!-- NUEVA ERA -->
-<section class="feature">
+<section class="feature fade">
 <img src="https://external-preview.redd.it/fia-a-new-era-of-competition-fia-showcases-future-focused-v0-ElsRgJhG86uGEzImHfD90uf3HYFvuSOeDMLnxPWdOUc.jpg?auto=webp&s=94ce302bed5b8d51dc54f439acf99a908f6a6ceb">
 <div class="text">
 <h2>Una nueva era</h2>
-<p>La Fórmula 1 2026 introduce cambios revolucionarios en motores, aerodinámica y sostenibilidad. La competencia se intensifica con nuevas tecnologías que redefinen el rendimiento en pista.</p>
+<p>La Fórmula 1 2026 introduce una revolución tecnológica con motores más eficientes, aerodinámica avanzada y un enfoque sostenible. La competencia se vuelve más intensa, donde cada detalle marca la diferencia entre la victoria y la derrota.</p>
 </div>
 </section>
 
 <!-- GRID -->
 <section class="grid-home">
 
-<div class="box">
+<div class="box fade">
 <img src="https://tn.com.ar/resizer/v2/https%3A%2F%2Fthumbs.vodgc.net%2F1-14-pcxBbv1771456257554-1771456490.jpg?auth=6a03eba678e931fe7de2c4b4b3d8de5c0b1d87010dde9b5a6f708a2909d26f88&width=767">
 <h3>Pilotos</h3>
-<p>Conoce a los 22 pilotos que definen la parrilla actual.</p>
+<p>Conoce a los 22 pilotos que dominan la parrilla actual.</p>
 <a href="pilotos.html">Explorar</a>
 </div>
 
-<div class="box">
+<div class="box fade">
 <img src="https://cdn-5.motorsport.com/images/amp/YpNrVwg0/s1000/salida.jpg">
 <h3>Equipos</h3>
-<p>Las escuderías que compiten por el campeonato.</p>
+<p>Las escuderías que compiten por la gloria en cada carrera.</p>
 <a href="equipos.html">Explorar</a>
 </div>
 
-<div class="box">
+<div class="box fade">
 <img src="https://images.ctfassets.net/1fvlg6xqnm65/1WfG8F2KEB1RGGZtuU7io5/3468b332418ecd3372476f1dbc652743/M452648.jpg?w=1920&q=75&fm=webp">
 <h3>Carreras</h3>
 <p>Los circuitos más icónicos del calendario mundial.</p>
 <a href="carreras.html">Explorar</a>
 </div>
 
-<div class="box">
+<div class="box fade">
 <img src="https://agdeportes.com/wp-content/uploads/2026/03/Podio-del-Gran-Premio-de-Japon-de-Formula-1-2026.jpg">
 <h3>Clasificación</h3>
 <p>La lucha por el campeonato en tiempo real.</p>
@@ -72,17 +72,39 @@
 </section>
 
 <!-- FINAL HERO -->
-<section class="full">
+<section class="full fade">
 <img src="https://wallpapercg.com/download/f1-cars-3840x2160-18246.jpg">
 <div class="overlay">
 <h2>La cima del automovilismo</h2>
-<p>Donde la ingeniería y el talento humano alcanzan su límite.</p>
+<p>Donde la ingeniería y el talento alcanzan su máximo nivel.</p>
 </div>
 </section>
 
 <footer>
 <p>F1 Experience 2026</p>
 </footer>
+
+<!-- SCRIPT ANIMACIONES -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("show");
+}
+});
+});
+
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
+
+window.addEventListener("scroll", () => {
+const nav = document.querySelector(".nav");
+if(window.scrollY > 50){
+nav.classList.add("nav-scroll");
+}else{
+nav.classList.remove("nav-scroll");
+}
+});
+</script>
 
 </body>
 </html>
