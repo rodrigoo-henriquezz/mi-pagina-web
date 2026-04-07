@@ -1,304 +1,115 @@
-/* RESET */
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:-apple-system, BlinkMacSystemFont, "SF Pro Display", sans-serif;
-scroll-behavior:smooth;
-}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>F1 Experience</title>
+<link rel="stylesheet" href="styles.css">
+</head>
 
-body{
-background:#f5f5f7;
-color:#1d1d1f;
-overflow-x:hidden;
-letter-spacing:-0.2px;
-animation:fadePage 0.8s ease;
-}
+<body>
 
-/* ANIMACION ENTRADA */
-@keyframes fadePage{
-from{
-opacity:0;
-transform:translateY(10px);
-}
-to{
-opacity:1;
-transform:translateY(0);
-}
-}
+<!-- NAV -->
+<header class="nav">
+<div class="logo" onclick="location.href='index.html'">
+F1 Experience
+</div>
 
-/* NAV */
-.nav{
-position:fixed;
-top:0;
-width:100%;
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:18px 40px;
-background:rgba(255,255,255,0.6);
-backdrop-filter:blur(20px);
--webkit-backdrop-filter:blur(20px);
-border-bottom:1px solid rgba(0,0,0,0.06);
-z-index:1000;
-transition:0.3s;
-}
+<nav>
+<a href="pilotos.html">Pilotos</a>
+<a href="equipos.html">Equipos</a>
+<a href="carreras.html">Carreras</a>
+<a href="tabla.html">Clasificación</a>
+</nav>
+</header>
 
-.nav-scroll{
-background:rgba(255,255,255,0.95);
-}
+<!-- HERO CON FONDO -->
+<section class="hero">
 
-.logo{
-font-size:18px;
-font-weight:600;
-letter-spacing:-0.5px;
-cursor:pointer;
-}
+<div class="hero-bg"></div>
 
-.nav a{
-color:#1d1d1f;
-margin-left:25px;
-text-decoration:none;
-font-size:14px;
-opacity:0.7;
-transition:0.25s;
-}
+<div class="hero-content fade">
+<h1>F1 Experience</h1>
+<p>La Fórmula 1 como nunca antes la habías visto</p>
+</div>
 
-.nav a:hover{
-opacity:1;
-}
+</section>
 
-/* HERO */
-.hero{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding-top:80px;
-}
+<!-- FEATURE -->
+<section class="feature fade">
 
-.hero h1{
-font-size:80px;
-font-weight:700;
-letter-spacing:-2px;
-}
+<img src="https://external-preview.redd.it/fia-a-new-era-of-competition-fia-showcases-future-focused-v0-ElsRgJhG86uGEzImHfD90uf3HYFvuSOeDMLnxPWdOUc.jpg?auto=webp&s=94ce302bed5b8d51dc54f439acf99a908f6a6ceb">
 
-.hero p{
-font-size:22px;
-margin-top:10px;
-color:#6e6e73;
-}
+<div class="text">
+<h2>Una nueva era</h2>
+<p>La temporada 2026 redefine la Fórmula 1 con una combinación de innovación tecnológica, sostenibilidad y competencia más intensa. Cada equipo y piloto enfrenta un nuevo desafío donde la precisión y la estrategia marcan la diferencia en cada vuelta.</p>
+</div>
 
-.hero-img{
-width:90%;
-max-width:1200px;
-margin-top:40px;
-border-radius:20px;
-box-shadow:0 20px 60px rgba(0,0,0,0.15);
-}
+</section>
 
-/* FEATURE */
-.feature{
-display:flex;
-align-items:center;
-gap:80px;
-padding:140px 10%;
-}
+<!-- GRID -->
+<section class="grid-home">
 
-.feature img{
-width:55%;
-border-radius:20px;
-transition:0.4s;
-}
+<div class="box fade">
+<img src="https://tn.com.ar/resizer/v2/https%3A%2F%2Fthumbs.vodgc.net%2F1-14-pcxBbv1771456257554-1771456490.jpg?auth=6a03eba678e931fe7de2c4b4b3d8de5c0b1d87010dde9b5a6f708a2909d26f88&width=767">
+<h3>Pilotos</h3>
+<p>Explora a los 22 pilotos que dominan la parrilla actual.</p>
+<a href="pilotos.html">Explorar</a>
+</div>
 
-.feature img:hover{
-transform:scale(1.03);
-}
+<div class="box fade">
+<img src="https://cdn-5.motorsport.com/images/amp/YpNrVwg0/s1000/salida.jpg">
+<h3>Equipos</h3>
+<p>Las escuderías que lideran la innovación en pista.</p>
+<a href="equipos.html">Explorar</a>
+</div>
 
-.feature h2{
-font-size:48px;
-margin-bottom:20px;
-letter-spacing:-1px;
-}
+<div class="box fade">
+<img src="https://images.ctfassets.net/1fvlg6xqnm65/1WfG8F2KEB1RGGZtuU7io5/3468b332418ecd3372476f1dbc652743/M452648.jpg?w=1920&q=75&fm=webp">
+<h3>Carreras</h3>
+<p>Los circuitos más icónicos del campeonato mundial.</p>
+<a href="carreras.html">Explorar</a>
+</div>
 
-.feature p{
-color:#6e6e73;
-line-height:1.6;
-}
+<div class="box fade">
+<img src="https://agdeportes.com/wp-content/uploads/2026/03/Podio-del-Gran-Premio-de-Japon-de-Formula-1-2026.jpg">
+<h3>Clasificación</h3>
+<p>La batalla por el campeonato en tiempo real.</p>
+<a href="tabla.html">Explorar</a>
+</div>
 
-/* GRID */
-.grid, .grid-home{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:40px;
-padding:120px 10%;
-}
+</section>
 
-/* CARDS */
-.card, .box{
-background:rgba(255,255,255,0.6);
-backdrop-filter:blur(20px);
--webkit-backdrop-filter:blur(20px);
-border-radius:20px;
-overflow:hidden;
-border:1px solid rgba(0,0,0,0.05);
-box-shadow:0 10px 30px rgba(0,0,0,0.08);
-transition:0.4s;
-transform:translateY(40px);
-opacity:0;
-position:relative;
-}
+<!-- FINAL -->
+<section class="full fade">
+<h2>Ingeniería. Velocidad. Precisión.</h2>
+<p>El máximo nivel del automovilismo mundial.</p>
+</section>
 
-/* EFECTO LUZ */
-.card::after, .box::after{
-content:"";
-position:absolute;
-top:0;
-left:-100%;
-width:100%;
-height:100%;
-background:linear-gradient(120deg, transparent, rgba(255,255,255,0.6), transparent);
-transition:0.6s;
-}
+<footer>
+<p>F1 Experience 2026</p>
+</footer>
 
-.card:hover::after, .box:hover::after{
-left:100%;
+<!-- SCRIPT -->
+<script>
+const observer = new IntersectionObserver((entries) => {
+entries.forEach(entry => {
+if(entry.isIntersecting){
+entry.target.classList.add("show");
 }
+});
+});
+document.querySelectorAll(".fade").forEach(el => observer.observe(el));
 
-.card.show, .box.show{
-transform:translateY(0);
-opacity:1;
+window.addEventListener("scroll", () => {
+const nav = document.querySelector(".nav");
+if(window.scrollY > 50){
+nav.classList.add("nav-scroll");
+}else{
+nav.classList.remove("nav-scroll");
 }
+});
+</script>
 
-.card img, .box img{
-width:100%;
-height:220px;
-object-fit:cover;
-transition:0.5s;
-}
-
-.card:hover img, .box:hover img{
-transform:scale(1.05);
-}
-
-.card:hover, .box:hover{
-transform:translateY(-10px);
-box-shadow:0 20px 40px rgba(0,0,0,0.15);
-}
-
-/* CONTENT */
-.card-content{
-padding:20px;
-}
-
-.card h3{
-font-size:20px;
-margin-bottom:10px;
-letter-spacing:-0.5px;
-}
-
-.card p{
-font-size:14px;
-color:#6e6e73;
-line-height:1.6;
-}
-
-/* LINKS */
-.box h3{
-padding:20px;
-}
-
-.box p{
-padding:0 20px;
-color:#6e6e73;
-}
-
-.box a{
-display:block;
-padding:20px;
-color:#0071e3;
-text-decoration:none;
-font-weight:500;
-transition:0.25s;
-}
-
-.box a:active{
-transform:scale(0.95);
-}
-
-/* FULL */
-.full{
-height:80vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-}
-
-.full h2{
-font-size:60px;
-letter-spacing:-1px;
-}
-
-.full p{
-color:#6e6e73;
-}
-
-/* FOOTER */
-footer{
-text-align:center;
-padding:40px;
-color:#86868b;
-}
-
-/* ANIMACIONES */
-.fade{
-opacity:0;
-transform:translateY(40px);
-transition:1s ease;
-}
-
-.fade.show{
-opacity:1;
-transform:translateY(0);
-}
-
-/* SECCIONES ESPACIADO */
-section{
-margin-bottom:120px;
-}
-
-/* SCROLLBAR */
-::-webkit-scrollbar{
-width:8px;
-}
-
-::-webkit-scrollbar-thumb{
-background:linear-gradient(#ccc,#999);
-border-radius:10px;
-}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-
-.hero h1{
-font-size:45px;
-}
-
-.feature{
-flex-direction:column;
-padding:80px 5%;
-}
-
-.feature img{
-width:100%;
-}
-
-.grid, .grid-home{
-padding:80px 5%;
-}
-
-}
+</body>
+</html>
