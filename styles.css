@@ -1,110 +1,66 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;500;700&display=swap');
 
 body {
     margin: 0;
-    font-family: 'Orbitron', sans-serif;
-    background: radial-gradient(circle at top, #0f172a, #020617);
+    font-family: 'Inter', sans-serif;
+    background: radial-gradient(circle at top, #020617, #0f172a);
     color: white;
 }
 
-/* NAVBAR FUTURISTA */
+/* NAV */
 header {
     position: sticky;
     top: 0;
-    background: rgba(255,255,255,0.05);
+    background: rgba(15, 23, 42, 0.7);
     backdrop-filter: blur(20px);
-    border-bottom: 1px solid rgba(255,255,255,0.1);
     padding: 15px;
     text-align: center;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
-nav a {
-    color: #ccc;
-    margin: 0 15px;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-nav a:hover {
-    color: #ff2c2c;
-}
-
-/* CONTENEDOR */
-.container {
-    padding: 30px;
-}
-
-/* TARJETAS PRO */
-.card {
-    background: rgba(255,255,255,0.05);
-    border: 1px solid rgba(255,255,255,0.1);
-    border-radius: 20px;
+/* GRID PROFESIONAL */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
     padding: 20px;
-    margin-bottom: 20px;
-    backdrop-filter: blur(25px);
-    transition: all 0.4s ease;
-    position: relative;
+}
+
+/* CARD ULTRA PRO */
+.card {
+    background: linear-gradient(145deg, rgba(255,255,255,0.05), rgba(255,255,255,0.02));
+    border-radius: 20px;
     overflow: hidden;
+    backdrop-filter: blur(30px);
+    border: 1px solid rgba(255,255,255,0.08);
+    transition: 0.4s;
 }
 
-/* EFECTO GLOW */
-.card::before {
-    content: "";
-    position: absolute;
-    width: 200%;
-    height: 200%;
-    background: radial-gradient(circle, rgba(255,0,0,0.2), transparent);
-    top: -50%;
-    left: -50%;
-    opacity: 0;
-    transition: 0.5s;
-}
-
-.card:hover::before {
-    opacity: 1;
-}
-
-/* HOVER PRO */
 .card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 0 30px rgba(255,0,0,0.3);
+    transform: translateY(-8px);
+    box-shadow: 0 0 40px rgba(255,0,0,0.3);
 }
 
-/* IMÁGENES */
+/* IMAGEN FIX (SOLUCIÓN REAL) */
 .card img {
     width: 100%;
-    border-radius: 15px;
-    margin-top: 10px;
+    height: 220px;
+    object-fit: cover;
+    background: #111;
 }
 
-/* TITULOS */
-h1 {
-    font-size: 28px;
-    letter-spacing: 2px;
+/* CONTENIDO */
+.card-content {
+    padding: 15px;
 }
 
 h3 {
+    margin: 0;
     color: #ff2c2c;
 }
 
-/* BOTONES FUTURISTAS */
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    border-radius: 10px;
-    background: linear-gradient(45deg, #ff0000, #ff4d4d);
-    color: white;
-    text-decoration: none;
-    transition: 0.3s;
-}
-
-.button:hover {
-    transform: scale(1.1);
-}
-
-/* FOOTER */
-footer {
-    text-align: center;
-    padding: 30px;
-    opacity: 0.6;
+p {
+    font-size: 14px;
+    opacity: 0.85;
+    line-height: 1.6;
 }
